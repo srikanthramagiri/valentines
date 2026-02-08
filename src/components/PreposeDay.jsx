@@ -63,7 +63,8 @@ export default function ProposeDay() {
                             </div>
 
                             {/* Video */}
-                            <video
+                            {/* <img src="../../assets/prepose.png" alt="" /> */}
+                            {/* <video
                                 className="w-full max-w-md rounded-xl shadow-lg mt-6"
                                 controls
                                 playsInline
@@ -71,7 +72,7 @@ export default function ProposeDay() {
                             >
                                 <source src="../assets/prepose.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
-                            </video>
+                            </video> */}
                         </motion.div>
                     )}
 
