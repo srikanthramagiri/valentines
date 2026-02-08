@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom";
 
+
 export default function RoseBackdrop() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState  ({ x: 0, y: 0 });
    
       const moveButton = () => {
           const x = Math.random() * 200 - 100;
