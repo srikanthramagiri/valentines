@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 export default function RoseBackdrop() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+   
+      const moveButton = () => {
+          const x = Math.random() * 200 - 100;
+          const y = Math.random() * 200 - 100;
+          setPosition({ x, y });
+      };
    const navigate = useNavigate();
   const roses = useMemo(() => {
     return Array.from({ length: 350 }).map(() => ({
@@ -54,20 +61,21 @@ export default function RoseBackdrop() {
             ♥
           </div>
             <div className="flex gap-4 mt-4">
+              <div className="mb-5">Did you receive my rose 🌹?</div>
           <button
             onClick={goToPropose}
             className="flex-1 rounded-xl bg-rose-500 text-white py-2 font-semibold hover:bg-rose-600"
           >
             Yes 😍
           </button>
-
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            onClick={goToPropose}
-            className="flex-1 rounded-xl bg-pink-200 text-rose-700 py-2 font-semibold"
-          >
-            No… where is it? 😏
-          </motion.button>
+ <motion.button
+          onMouseEnter={moveButton}
+          animate={position}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="px-6 py-2 rounded-xl bg-gray-300 text-gray-700 cursor-not-allowed select-none"
+        >
+           No… where is it? 😏
+        </motion.button>
         </div>
         </div>
       </div>
