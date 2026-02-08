@@ -5,6 +5,7 @@ import './App.css'
 import FancyCard from './components/FancyCard'
 import ValentineApp from './components/ValentinesApp'
 import RoseDay from './components/RoseDay'
+import AppRouter from './components/Route'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,8 +19,8 @@ function App() {
       />
     </div> */}
     {/* <ValentineApp />
-     */}
-     <RoseDay />
+     */}<AppRouter ></AppRouter>
+     
   </>
   )
 }
